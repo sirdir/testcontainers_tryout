@@ -9,7 +9,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class TestcontainersTest {
 
     @Container
-    public GenericContainer alpine = new GenericContainer("alpine:latest");
+    public GenericContainer alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
 
     @Test
     void test1() {
