@@ -11,15 +11,15 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class PerMethod {
 
     @Container
-    public GenericContainer<?> alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
+    public GenericContainer<?> nginx = new GenericContainer("nginx:latest");
 
     @Test
     void test1() {
-        System.out.println(alpine.isRunning());
+        System.out.println(nginx.isRunning());
     }
 
     @Test
     void test2() {
-        System.out.println(alpine.isRunning());
+        System.out.println(nginx.isRunning());
     }
 }

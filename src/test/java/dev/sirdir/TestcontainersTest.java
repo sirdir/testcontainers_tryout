@@ -9,16 +9,16 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class TestcontainersTest {
 
     @Container
-    public GenericContainer<?> alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
+    public GenericContainer<?> nginx = new GenericContainer("nginx:latest");
 
     @Test
     void test1() {
-        System.out.println(this.getClass().getSimpleName() + " test1 " + alpine.isRunning());
+        System.out.println(this.getClass().getSimpleName() + " test1 " + nginx.isRunning());
     }
 
     @Test
     void test2() {
-        System.out.println(this.getClass().getSimpleName() + " test2 " + alpine.isRunning());
+        System.out.println(this.getClass().getSimpleName() + " test2 " + nginx.isRunning());
     }
 
 }

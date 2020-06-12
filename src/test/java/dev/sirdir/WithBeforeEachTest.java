@@ -10,20 +10,20 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class WithBeforeEachTest {
 
     @Container
-    public GenericContainer<?> alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
+    public GenericContainer<?> nginx = new GenericContainer("nginx:latest");
 
     @BeforeEach
     void setupPerTest() {
-        System.out.println(this.getClass().getSimpleName() + " BeforeEach " + alpine.isRunning());
+        System.out.println(this.getClass().getSimpleName() + " BeforeEach " + nginx.isRunning());
     }
 
     @Test
     void test3() {
-        System.out.println(this.getClass().getSimpleName() + " test3 " + alpine.isRunning());
+        System.out.println(this.getClass().getSimpleName() + " test3 " + nginx.isRunning());
     }
 
     @Test
     void test4() {
-        System.out.println(this.getClass().getSimpleName() + " test4 " + alpine.isRunning());
+        System.out.println(this.getClass().getSimpleName() + " test4 " + nginx.isRunning());
     }
 }
