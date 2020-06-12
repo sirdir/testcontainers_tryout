@@ -10,7 +10,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 public class WithBeforeEachTest {
 
     @Container
-    public GenericContainer alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
+    public GenericContainer<?> alpine = new GenericContainer("alpine:latest").withCommand("sleep 10");
 
     @BeforeEach
     void setupPerTest() {
